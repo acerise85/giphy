@@ -14,21 +14,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body>
-    <!-- Buttons added here from topics array and new button -->
-    <div id="button-div" data-topic=" "></div>
 
-    <form>
+
+<body id="background">
+    <!-- Buttons added here from topics array and new button -->
+    <div class="container">
+    <h1 id="header">Giphy Fun</h1>
+    <p id="info">Click on the buttons below to display Giphs. Add a new button by typing whatever you want into the text field. Click on your new button and see what comes up!</p>
+    <div id="button-div" data-topic=" "></div>
+    
+    <form id="formbutton">
         <!-- Text for new button label -->
-        <label for="newButton">Add a button</label>
+        <label for="newButton" class="btn btn-secondary" data-toggle="button" aria-pressed="false" >Add a button</label>
         <!-- Value of new button input -->
-        <input type="text" id="newButton" >
+        <input type="text" id="newButton">
         <!-- Submit button for new button -->
-        <input id="new-button" type="submit" value="Add a Button"></button>
+        <input id="new-button" class="btn btn-secondary" data-toggle="button" aria-pressed="false" type="submit" value="Add a Button"></button>
     </form>
     <!-- Giphs displayed here -->
     <div id="giphyPics"></div>
-
+</div>
     <script src="assets/javascript/java.js"></script>
 </body>
 

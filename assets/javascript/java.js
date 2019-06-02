@@ -7,10 +7,10 @@ $(document).ready(function () {
     
     //For loop to make button for each item in the topics array
     for (i = 0; i < topics.length; i++) {  
-        var gifButton = $("<button>");
+        var gifButton = $("<button type=button,data-toggle=button, aria-pressed=false>");
         gifButton.attr("data-topic", topics[i]);
         gifButton.text(topics[i]);
-        gifButton.addClass('buttons');
+        gifButton.addClass('buttons btn btn-secondary');
         $("#button-div").append(gifButton);
         console.log(gifButton);
         
@@ -36,10 +36,10 @@ $(document).on('click', 'button', function () {
         // For loop to append giph pics from data of button
         for (i = 0; i < results.length; i++) {  
             var giphyPics = $('<div>');
-            var p = $('<p>').text("Rating: " + results[i].rating);
             var topicPic = $('<img>');
             topicPic.attr("src", results[i].images.fixed_height.url);
-            $("#giphyPics").append(p,topicPic);    
+            var p = $('<p style=font-family:cursive>').text("Rating: " + results[i].rating);
+            $("#giphyPics").append(topicPic,p);    
         }  
     })   
 })
@@ -49,9 +49,9 @@ function newButtons(){
     $('#new-button').on('click', function(){
         event.preventDefault();
         var nButton = $("#newButton").val();
-        var newButton = $("<button>");
+        var newButton = $("<button type=button,data-toggle=button, aria-pressed=false>");
         newButton.text(nButton);
-        newButton.addClass('buttons');
+        newButton.addClass('buttons btn btn-secondary');
         $("#button-div").append(newButton);
         
         //Push new button value to topics array
@@ -60,10 +60,10 @@ function newButtons(){
 
         // For loop to create new button from user input
             for (i = 0; i < topics.length; i++) {
-                var nGiph = $("<button>");
+                var nGiph = $("<button type=button,data-toggle=button, aria-pressed=false>");
                 nGiph.attr("data-topic", topics[i]);
                 nGiph.text(topics[i]);
-                nGiph.addClass('buttons');
+                nGiph.addClass('buttons btn btn-secondary');
                 $("#button-div").append(nGiph);                
             }
         })
